@@ -1,0 +1,15 @@
+.container 
+{
+	padding-top:60px;
+	background-color:#099;
+	color:#CCC;
+	font-size:20px;
+	width:auto;
+}
+.door
+{
+	border:0px solid #000;
+	margin-left:100px;
+	margin-top:20px;
+	background-color:#099;
+}
