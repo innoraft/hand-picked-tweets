@@ -1,0 +1,11 @@
+<?php
+//Create a _globals.php file
+//This is the sample of _globals.php file. 
+
+
+$GLOBALS['MYSQL_DOMAIN']="YOUR_DOMAIN";
+$GLOBALS['MYSQL_USERNAME']="YOUR_USERNAME";
+$GLOBALS['MYSQL_PASSWORD']="YOUR PASSWORD";
+$GLOBALS['MYSQL_DATABASE']="YOUR_DB";
+
+?>
