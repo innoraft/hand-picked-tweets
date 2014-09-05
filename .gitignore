@@ -1,6 +1,7 @@
 #My Files#
 ##########
 _globals.php
+*.test
 
 # Compiled source #
 ###################
