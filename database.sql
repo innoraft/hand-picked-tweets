@@ -51,9 +51,9 @@ DROP TABLE IF EXISTS `tweets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tweets` (
-  `tweet-id` int(11) NOT NULL,
+  `tweet-id` BIGINT NOT NULL,
   `tweet-label-id` int(11) NOT NULL,
-  `tweet-oembed` varchar(500) NOT NULL,
+  `tweet-oembed` BLOB NOT NULL,
   KEY `tweet-lable-id_idx` (`tweet-label-id`),
   CONSTRAINT `tweet-label-id` FOREIGN KEY (`tweet-label-id`) REFERENCES `label` (`label-id`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
