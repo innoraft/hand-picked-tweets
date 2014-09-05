@@ -10,28 +10,42 @@
     <link href="style.css" rel="stylesheet">
     
 </head>
- <a href="index.html" class="navbar-brand pull-left" style="color:#FFF"><img src="hand.png" width="300"></a>
+ <a href="index.html" class="navbar-brand pull-left" style="color:#FFF"><img src="hand.png" width="300" ></a>
 <header class="top" role="header" >
         <div class="container">
              <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="glyphicon glyphicon-align-justify"></span>
             </button>
             <nav class="navbar-collapse collapse" role="navigation">
-                <ul class="navbar-nav nav" >
-                    <li class="door" class="fade"><a href="#" style="color:#FFF">Humor</a></li>
-                    <li class="door"><a href="#" style="color:#FFF">Business</a></li>
-                    <li class="door"><a href="#" style="color:#FFF">Food</a></li>
-                    <li class="door"><a href="#" style="color:#FFF">D</a></li>
-                    <li class="door"><a href="#" style="color:#FFF">E</a></li>
-                    <li class="door"><a href="#" style="color:#FFF">E</a></li>
+            <form method="post">
+                <ul class="navbar-nav nav">
+                    <li class="door"><button class="btn-block" name="humor" onClick='flag("humor")'>Humor</button></li>
+                    <li class="door"><button class="btn-block" name="business" onClick='flag("business")'>Business</button></li>
+                    <li class="door"><button class="btn-block" name="food" onClick='flag("food")'>Food</button></li>
+                    <li class="door"><button class="btn-block" name="political"  onClick='flag("political")'>Policital</button></li>
+                    <li class="door"><button class="btn-block" name="sports" onClick='flag("sports")'>Sports</button></li>
+                    <li class="door"><button class="btn-block" name="other" onClick='flag("other")'>Other</button></li>
+                
                 </ul>
+			 </form>
             </nav>
         </div>
     </header>
     
 <body>
+		<div></div>
 </body>
-<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+function flag(label)
+{
+	var val=1;
+	//alert(label);
+	// window.location.href = "host.php?w1=" + label + "&w2=" + val;
+	window.open("host.php?label=" + label + "&flag=" + "put");
+	
+}
+</script>
+<script src="jquery.js"></script>
 <!--<script src="includes/jquery/jquery-2.1.0.min.js"></script>-->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </html>
