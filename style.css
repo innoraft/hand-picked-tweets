@@ -5,6 +5,9 @@
 	color:#CCC;
 	font-size:20px;
 	width:auto;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0 10px 6px -6px #777;
 }
 .door
 {
@@ -12,4 +15,7 @@
 	margin-left:100px;
 	margin-top:20px;
 	background-color:#099;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0 10px 6px -6px #777;
 }
