@@ -1,8 +1,8 @@
 <?php
 
-$tweetid = $_GET['tweetid'];
-$label = strtolower($_GET['label']);
-$flag = strtolower($_GET['flag']);
+$tweetid = $_POST['tweetid'];
+$label = strtolower($_POST['label']);
+$flag = strtolower($_POST['flag']);
 $num = intval($_GET['num']);
 
 //Server Connection file
@@ -19,6 +19,7 @@ if ($flag=="put")
     curl_close($ch);
     $embed=json_decode($result, true);
     $embed=$embed["html"];
+    echo "$tweetid $$$ $label $$$ $embed";
     $query = "INSERT INTO tweets VALUES ($tweetid,$label,'$embed');";
     $result = mysql_query($query, $con) or die('MySQL Error.');  
 }
