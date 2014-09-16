@@ -1,5 +1,7 @@
 <?php
 
+//Sample URL for getting tweets : ..hand-picked-tweets/host.php?flag=fetch&label=humour&num=50
+
 switch($_SERVER['REQUEST_METHOD'])
 {
 case 'GET':
