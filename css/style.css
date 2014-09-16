@@ -1,0 +1,22 @@
+.sir
+{
+    width:fit-content;
+    -webkit-box-shadow: 7px 7px 5px -6px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    7px 7px 5px -6px rgba(50, 50, 50, 0.75);
+box-shadow:         7px 7px 5px -6px rgba(50, 50, 50, 0.75);
+border:black 0px solid;
+
+margin-right: 20px;
+text-align:center;
+}
+.sir:hover
+{
+   
+    color:#ffffff;
+    width:fit-content;
+    webkit-box-shadow: 7px 7px 5px 5px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    7px 7px 5px 5px rgba(50, 50, 50, 0.75);
+box-shadow:         7px 7px 5px 5px rgba(50, 50, 50, 0.75);
+border:black 1px solid;
+    
+}
