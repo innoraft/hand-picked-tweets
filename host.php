@@ -1,6 +1,6 @@
 <?php
 
-//Sample URL for getting tweets : ..hand-picked-tweets/host.php?flag=fetch&label=humour&num=50
+//Sample URL for getting tweets : ..hand-picked-tweets/host.php?flag=fetch&label=humour&num=50&tweetid=5467765433
 
 switch($_SERVER['REQUEST_METHOD'])
 {
@@ -61,6 +61,10 @@ else if ($flag=="fetch")
     header('Content-type: application/json');
     $output = json_encode(array('posts' => $tweets));
     echo $output;
+    $fp = fopen('file.json', 'w+');
+    fwrite($fp, json_encode($output));
+    fclose($fp);
+    
 }
 else
 {
