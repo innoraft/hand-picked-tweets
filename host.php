@@ -1,8 +1,11 @@
 <?php
 
 $tweetid = $_POST['tweetid'];
+if(!isset($label)) $label=($_GET['tweetid']);
 $label = strtolower($_POST['label']);
+if(!isset($label)) $label=strtolower($_GET['label']);
 $flag = strtolower($_POST['flag']);
+if(!isset($label)) $label=strtolower($_GET['flag']);
 $num = intval($_GET['num']);
 
 //Server Connection file
@@ -19,15 +22,25 @@ if ($flag=="put")
     curl_close($ch);
     $embed=json_decode($result, true);
     $embed=$embed["html"];
-    $label=strtolower($label);
     $labelquery=mysql_query("select `label-id` from label where `label-name` = '$label';");
     $labelid = mysql_fetch_array($labelquery);
     $labelid=$labelid['label-id'];
-    echo "INSERT INTO tweets VALUES ($tweetid,$labelid,'$embed');";
+    //echo "INSERT INTO tweets VALUES ($tweetid,$labelid,'$embed');";
     $query = "INSERT INTO tweets VALUES ($tweetid,$labelid,'$embed');";
-    $result = mysql_query($query, $con) or die('MySQL Error.');  
+    if(mysql_query($query, $con))
+    {
+        $response_array['status'] = 'Done!';  
+    }
+    else
+    {
+        $response_array['status'] = 'MySql Error :(';  
+    }
+    header('Content-type: application/json');
+    echo json_encode($response_array);
 }
+
 else if ($flag=="fetch")
+
 {
     //Server Connection file
     require_once 'database-connection.php'; 
@@ -37,6 +50,7 @@ else if ($flag=="fetch")
     {
     $tweets[] = array('post'=>$tweet);
     }
+    header('Content-type: application/json');
     $output = json_encode(array('posts' => $tweets));
     echo $output;
 }
