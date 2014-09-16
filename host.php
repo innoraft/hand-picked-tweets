@@ -1,12 +1,18 @@
 <?php
 
-$tweetid = $_POST['tweetid'];
-if(!isset($label)) $label=($_GET['tweetid']);
-$label = strtolower($_POST['label']);
-if(!isset($label)) $label=strtolower($_GET['label']);
-$flag = strtolower($_POST['flag']);
-if(!isset($label)) $label=strtolower($_GET['flag']);
-$num = intval($_GET['num']);
+switch($_SERVER['REQUEST_METHOD'])
+{
+case 'GET':
+    $tweetid=($_GET['tweetid']);
+    $label=strtolower($_GET['label']);
+    $flag=strtolower($_GET['flag']);
+    $num = intval($_GET['num']);
+    break;
+case 'POST':
+    $tweetid = $_POST['tweetid'];
+    $label = strtolower($_POST['label']);
+    $flag = strtolower($_POST['flag']);
+}
 
 //Server Connection file
 require_once 'database-connection.php'; 
