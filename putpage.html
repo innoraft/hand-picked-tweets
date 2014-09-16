@@ -96,7 +96,7 @@
                 "tweetid": global_id,
                 "flag": "put"
             },
-            type: 'post',
+            type: 'get',
             success: function (result) {
                 $("#message").html(result.status);
                 $("#message").removeClass("nodisplay").delay(2000).queue(function (next) {

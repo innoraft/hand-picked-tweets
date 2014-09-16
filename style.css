@@ -102,11 +102,12 @@
     line-height: 17px;
 
     position: relative;
-
+    float: left;
+    
     display: inline-block;
 
     width: 80px;
-    margin: 0;
+    margin-top: 20px;
     margin-right: auto;
     margin-bottom: 5px;
     margin-left: auto;
@@ -129,8 +130,9 @@
 }
 
 .content {
-    width: 80%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     position: relative;
+    float: left;
 }
