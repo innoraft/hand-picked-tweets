@@ -19,8 +19,12 @@ if ($flag=="put")
     curl_close($ch);
     $embed=json_decode($result, true);
     $embed=$embed["html"];
-    echo "$tweetid $$$ $label $$$ $embed";
-    $query = "INSERT INTO tweets VALUES ($tweetid,$label,'$embed');";
+    $label=strtolower($label);
+    $labelquery=mysql_query("select `label-id` from label where `label-name` = '$label';");
+    $labelid = mysql_fetch_array($labelquery);
+    $labelid=$labelid['label-id'];
+    echo "INSERT INTO tweets VALUES ($tweetid,$labelid,'$embed');";
+    $query = "INSERT INTO tweets VALUES ($tweetid,$labelid,'$embed');";
     $result = mysql_query($query, $con) or die('MySQL Error.');  
 }
 else if ($flag=="fetch")
