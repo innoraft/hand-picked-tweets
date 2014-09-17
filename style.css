@@ -1,0 +1,105 @@
+.container 
+{
+	padding-top:60px;
+	background-color:#099;
+	color:#CCC;
+	font-size:20px;
+	width:auto;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0 10px 6px -6px #777;
+}
+.door
+{
+	border:0px solid #000;
+	margin-left:100px;
+	margin-top:20px;
+	background-color:#099;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0 10px 6px -6px #777;
+}
+
+
+<!--  CSS -->
+
+.bar
+{
+    position: fixed;
+    z-index: 100; 
+    left: 0;
+    width: 100%;
+}
+
+.top
+{
+top: 0;
+z-index: 100;
+margin-left: 40% !important;
+margin-right: 40% !important;
+width: 7em !important;
+transition: margin-top .2s linear .5s;
+position: relative;
+}
+
+.nodisplay
+{
+    margin-top: -5em !important;
+}
+
+.bottom
+{
+    bottom: 0; 
+}
+
+.ibox
+{
+    width: 100%;
+    border-radius: 3px;
+    border: 1.5px;
+    text-align: center;
+    font-style: italic;
+}
+
+.WorldsBestButton
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 7em;
+    padding: 2px;
+    background-color: #ffff00;
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: 1px 0px 9px #aeaeae;
+    display: inline-block;
+    margin: 0px;
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    -ms-border-radius: 5%;
+    border-radius: 5%;
+    /*    border: 2px inset rgba(255, 255, 255, 0.18);*/
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-image: linear-gradient(#FFFF49, #FFFF00);
+    line-height: 17px;
+}
+.content
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    position: relative;    
+}
+
+.press {
+    margin-left: 45%;
+    margin-right: 45%;
+    position: relative;
+    border: 0px ;
+    margin-bottom: 5px;
+    background-color: #FFC200;
+    background-image: linear-gradient(#FFBD49, #FFA300);
+    margin-top: -26px
+}
