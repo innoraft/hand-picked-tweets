@@ -2,15 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Navbar tutorial from BootstrapBay.com">
-    <meta name="author" content="BootstrapBay.com">
     <title>Hand picked Tweets</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body ng-app="mainModule">
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
@@ -35,10 +32,24 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+  <div ng-controller="mainController">
+    <h3>1. Simple GET call</h3>
+   <!-- <button ng-change="simpleGetCall(true)">Call server with SUCCESS</button><br />
+    <button ng-click="simpleGetCall(false)">Call server with ERROR</button><br />
+    -->
+  
+    <div ng-repeat="data in simpleGetCallResult">
+           {{data.post['tweet-oembed']}}<br/>
+    </div>
+            
+  </div>
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="jss/jquery.js"></script>
     <script src="jss/bootstrap.min.js"></script>
+    <script src="jss/angular.js"></script>
+    <script src="jss/script.js"></script>
   </body>
 </html>
