@@ -1,51 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-    <!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 3 Responsive Design Tutorial | RevillWeb.com</title>
-    <!-- Include bootstrap CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    
-</head>
- <a href="index.html" class="navbar-brand pull-left" style="color:#FFF"><img src="hand.png" width="300" ></a>
-<header class="top" role="header" >
-        <div class="container">
-             <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="glyphicon glyphicon-align-justify"></span>
-            </button>
-            <nav class="navbar-collapse collapse" role="navigation">
-            <form method="post">
-                <ul class="navbar-nav nav">
-                    <li class="door"><button class="btn-block" name="humor" onClick='flag("humor")'>Humor</button></li>
-                    <li class="door"><button class="btn-block" name="business" onClick='flag("business")'>Business</button></li>
-                    <li class="door"><button class="btn-block" name="food" onClick='flag("food")'>Food</button></li>
-                    <li class="door"><button class="btn-block" name="political"  onClick='flag("political")'>Policital</button></li>
-                    <li class="door"><button class="btn-block" name="sports" onClick='flag("sports")'>Sports</button></li>
-                    <li class="door"><button class="btn-block" name="other" onClick='flag("other")'>Other</button></li>
-                
-                </ul>
-			 </form>
-            </nav>
+    <meta name="description" content="Navbar tutorial from BootstrapBay.com">
+    <meta name="author" content="BootstrapBay.com">
+    <title>Hand picked Tweets</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Hand Picked Tweets</a>
         </div>
-    </header>
-    
-<body>
-		<div></div>
-</body>
-<script type="text/javascript">
-function flag(label)
-{
-	var val=1;
-	//alert(label);
-	// window.location.href = "host.php?w1=" + label + "&w2=" + val;
-	window.open("host.php?label=" + label + "&flag=" + "put");
-	
-}
-</script>
-<script src="jquery.js"></script>
-<!--<script src="includes/jquery/jquery-2.1.0.min.js"></script>-->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="sir" class="active" ><a href="#">Humour</a></li>       
+            <li class="sir"><a href="#about" >Business</a></li>
+            <li class="sir"><a href="#" >Food</a></li>
+            <li class="sir"><a href="#" >Political</a></li>
+            <li class="sir"><a href="#" >Sports</a></li>
+            <li class="sir"><a href="#" >Other</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="jss/jquery.js"></script>
+    <script src="jss/bootstrap.min.js"></script>
+  </body>
 </html>

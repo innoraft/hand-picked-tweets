@@ -1,0 +1,142 @@
+.container
+{
+    font-size: 20px;
+
+    width: auto;
+    padding-top: 60px;
+
+    color: #ccc;
+    background-color: #099;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+.door
+{
+    margin-top: 20px;
+    margin-left: 100px;
+
+    border: 0 solid #000;
+    background-color: #099;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+.bar
+{
+    position: fixed;
+    z-index: 100;
+    left: 0;
+
+    width: 100;
+        
+    float: left;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.top
+{
+    top: 0;
+
+    width: 7em !important;
+    margin-left: 45% !important;
+
+    transition: margin-top .2s linear .5s;
+}
+
+.nodisplay
+{
+    margin-top: -55px !important;
+}
+
+.bottom
+{
+    bottom: 0;
+}
+
+.WorldsBestButton
+{
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 17px;
+
+    display: inline-block;
+
+    width: 7em;
+    margin: 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2px;
+
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+
+    -webkit-border-radius: 5%;
+       -moz-border-radius: 5%;
+            border-radius: 5%;
+    background-color: #ff0;
+    background-image: linear-gradient(#ffff49, #ff0);
+    box-shadow: 1px 0 9px #aeaeae;
+/*    border: 2px inset rgba(255, 255, 255, 0.18);*/
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+
+        -ms-border-radius: 5%;
+}
+
+.ibox
+{
+    font-style: italic;
+
+    width: 100%;
+
+    text-align: center;
+
+    border: 1.5px;
+    border-radius: 3px;
+}
+
+
+.press
+{
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 17px;
+
+    position: relative;
+    float: left;
+    
+    display: inline-block;
+
+    width: 80px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    padding: 2px;
+
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+
+    border: 0 ;
+    -webkit-border-radius: 5%;
+       -moz-border-radius: 5%;
+        -ms-border-radius: 5%;
+            border-radius: 5%;
+    background-color: #ffc200;
+    background-image: linear-gradient(#ffbd49, #ffa300);
+    box-shadow: 1px 0 9px #aeaeae;
+    /*    border: 2px inset rgba(255, 255, 255, 0.18);*/
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+}
+
+.content {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    float: left;
+}
