@@ -92,10 +92,14 @@ position: relative;
 .nodisplay
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin-top: -5em !important;
 =======
     margin-top: -55px !important;
 >>>>>>> 322c85ddb4105fadb44754b747b74ca1de0d8857
+=======
+    margin-top: -65px !important;
+>>>>>>> b0dcb8526ba132b4765d9f729a041d0781aa6471
 }
 
 .bottom

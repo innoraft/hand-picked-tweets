@@ -27,7 +27,7 @@ DROP TABLE IF EXISTS `label`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `label` (
-  `label-id` int(11) NOT NULL,
+  `label-id` int(11) NOT NULL AUTO_INCREMENT,
   `label-name` varchar(45) NOT NULL,
   PRIMARY KEY (`label-id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
