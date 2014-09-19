@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HPT</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-wclassth, initial-scale=1.0">
+        <link href="style1.css" rel="stylesheet">
+        
+    </head>
+    <body ng-app="app">
+        
+        <div class="content" ng-controller="mainCtrl">
+            <div class="Heading toplogo">Hand picked Tweets</div>
+            <div class="instructionBox">
+                INstruction,about the app,Content and links<br/>
+            </div>
+            
+            <div class="preview">
+                <div class="labelbox" onclick='labelSelect("Tech")'>
+            <h1 >Tech<div class="arrow" >></div></h1>
+          </div>
+          <div class="labelbox">
+              <h1 >Humour<div class="arrow">></div></h1>
+          </div>
+                    <div class="preview">
+          <div class="labelbox">
+            <h1 >Quotation<div class="arrow">></div></h1>
+          </div>
+        </div>            <div class="preview">
+          <div class="labelbox">
+            <h1 >Business<div class="arrow">></div></h1>
+          </div>
+        </div>
+            <div class="preview">
+          <div class="labelbox">
+            <h1 >Food<div class="arrow">></div></h1>
+          </div>
+        </div>      <div class="preview">
+          <div class="labelbox">
+            <h1 >Games<div class="arrow">></div></h1>
+          </div>
+            <div class="labelbox">
+            <h1 >Others<div class="arrow">></div></h1>
+          </div>
+        </div>
+        <div ng-view></div>
+        <div class="footer">
+                Created with ❤ by @innoraft.
+            </div>
+            
+        </div>
+         <script src="jss/angular.js"></script>
+    <script src="jss/script.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
+    </body>
+</html>

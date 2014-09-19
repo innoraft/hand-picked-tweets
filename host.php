@@ -51,15 +51,21 @@ else if ($flag=="fetch")
 
 {
     //Server Connection file
-    require_once 'database-connection.php'; 
-    $result = mysql_query('SELECT * FROM tweets LIMIT ' . $num.';', $con) or die('MySQL Error.');
+    require_once 'database-connection.php';
+    //this query collects all tweets with their labels and id in LIFO (reverse chronological) order  
+    $result = mysql_query('select `label-name`,`tweet-id`, `tweet-oembed` from tweets inner join label on `tweet-label-id`=`label-id` order by `label-name` asc,`tweet-id` desc ;', $con) or die('MySQL Error.');
     $tweets = array();
     while($tweet = mysql_fetch_array($result, MYSQL_ASSOC))
     {
-    $tweets[] = array('post'=>$tweet);
+        $tweets[$tweet['label-name']][$tweet['tweet-id']] = $tweet['tweet-oembed'];
     }
+    //var_dump($tweets);
     header('Content-type: application/json');
+<<<<<<< HEAD
     $output = json_encode( $tweets);
+=======
+    $output = json_encode(array($tweets));
+>>>>>>> 322c85ddb4105fadb44754b747b74ca1de0d8857
     echo $output;
     
 }
