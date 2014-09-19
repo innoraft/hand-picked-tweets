@@ -1,35 +1,11 @@
-<<<<<<< HEAD
-.container 
-{
-	padding-top:60px;
-	background-color:#099;
-	color:#CCC;
-	font-size:20px;
-	width:auto;
-	-webkit-box-shadow: 0 10px 6px -6px #777;
-	-moz-box-shadow: 0 10px 6px -6px #777;
-	box-shadow: 0 10px 6px -6px #777;
-}
-.door
-{
-	border:0px solid #000;
-	margin-left:100px;
-	margin-top:20px;
-	background-color:#099;
-	-webkit-box-shadow: 0 10px 6px -6px #777;
-	-moz-box-shadow: 0 10px 6px -6px #777;
-	box-shadow: 0 10px 6px -6px #777;
-}
-
-
-<!--  CSS -->
-=======
 .container
 {
     font-size: 20px;
 
     width: auto;
     padding-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
 
     color: #ccc;
     background-color: #099;
@@ -37,6 +13,7 @@
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
 }
+
 .door
 {
     margin-top: 20px;
@@ -48,66 +25,38 @@
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
 }
->>>>>>> 322c85ddb4105fadb44754b747b74ca1de0d8857
 
 .bar
 {
     position: fixed;
-<<<<<<< HEAD
-    z-index: 100; 
-    left: 0;
-    width: 100%;
-=======
     z-index: 100;
     left: 0;
 
-    width: 100;
-        
-    float: left;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
->>>>>>> 322c85ddb4105fadb44754b747b74ca1de0d8857
 }
 
 .top
 {
-<<<<<<< HEAD
-top: 0;
-z-index: 100;
-margin-left: 40% !important;
-margin-right: 40% !important;
-width: 7em !important;
-transition: margin-top .2s linear .5s;
-position: relative;
-=======
     top: 0;
-
-    width: 7em !important;
-    margin-left: 45% !important;
-
     transition: margin-top .2s linear .5s;
->>>>>>> 322c85ddb4105fadb44754b747b74ca1de0d8857
 }
 
 .nodisplay
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    margin-top: -5em !important;
-=======
-    margin-top: -55px !important;
->>>>>>> 322c85ddb4105fadb44754b747b74ca1de0d8857
-=======
-    margin-top: -65px !important;
->>>>>>> b0dcb8526ba132b4765d9f729a041d0781aa6471
+    margin-top: -35px !important;
 }
 
 .bottom
 {
-<<<<<<< HEAD
-    bottom: 0; 
-=======
     bottom: 0;
+}
+
+.nolist{
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 auto 0 auto;
 }
 
 .WorldsBestButton
@@ -115,8 +64,6 @@ position: relative;
     font-size: 13px;
     font-weight: 300;
     line-height: 17px;
-
-    display: inline-block;
 
     width: 7em;
     margin: 0;
@@ -138,61 +85,10 @@ position: relative;
     text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 
         -ms-border-radius: 5%;
->>>>>>> 322c85ddb4105fadb44754b747b74ca1de0d8857
 }
 
 .ibox
 {
-<<<<<<< HEAD
-    width: 100%;
-    border-radius: 3px;
-    border: 1.5px;
-    text-align: center;
-    font-style: italic;
-}
-
-.WorldsBestButton
-{
-    margin-left: auto;
-    margin-right: auto;
-    width: 7em;
-    padding: 2px;
-    background-color: #ffff00;
-    vertical-align: middle;
-    text-align: center;
-    box-shadow: 1px 0px 9px #aeaeae;
-    display: inline-block;
-    margin: 0px;
-    font-size: 13px;
-    font-weight: 300;
-    cursor: pointer;
-    -webkit-border-radius: 5%;
-    -moz-border-radius: 5%;
-    -ms-border-radius: 5%;
-    border-radius: 5%;
-    /*    border: 2px inset rgba(255, 255, 255, 0.18);*/
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-    background-image: linear-gradient(#FFFF49, #FFFF00);
-    line-height: 17px;
-}
-.content
-{
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    position: relative;    
-}
-
-.press {
-    margin-left: 45%;
-    margin-right: 45%;
-    position: relative;
-    border: 0px ;
-    margin-bottom: 5px;
-    background-color: #FFC200;
-    background-image: linear-gradient(#FFBD49, #FFA300);
-    margin-top: -26px
-=======
     font-style: italic;
 
     width: 100%;
@@ -206,20 +102,13 @@ position: relative;
 
 .press
 {
-    font-size: 13px;
+     font-size: 13px;
     font-weight: 300;
     line-height: 17px;
 
-    position: relative;
-    float: left;
-    
-    display: inline-block;
-
-    width: 80px;
-    margin-top: 20px;
-    margin-right: auto;
-    margin-bottom: 5px;
-    margin-left: auto;
+    width: 7em;
+    margin: 0;
+    margin: 10px auto 5px auto;
     padding: 2px;
 
     cursor: pointer;
@@ -238,11 +127,7 @@ position: relative;
     text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 }
 
-.content {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-    float: left;
->>>>>>> 322c85ddb4105fadb44754b747b74ca1de0d8857
+.content iframe{
+    margin:0 auto !important;
+    display:block;
 }
