@@ -9,6 +9,8 @@ case 'GET':
     $label=strtolower($_GET['label']);
     $flag=strtolower($_GET['flag']);
     $num = intval($_GET['num']);
+    $newlabel = strtolower($_GET['newlabel']);
+    echo $newlabel;
     break;
 case 'POST':
     $tweetid = $_POST['tweetid'];
@@ -63,6 +65,22 @@ else if ($flag=="fetch")
     header('Content-type: application/json');
     $output = json_encode(array($tweets));
     echo $output;
+}
+
+if ($flag=="newlabel")
+{
+    $query = "insert into `label` values (NULL,'$newlabel');";
+    if(mysql_query($query, $con))
+    {
+        $response_array['status'] = "Added $newlabel!";  
+    }
+    else
+    {
+        $response_array['status'] = 'MySql Error :(';  
+    }
+    
+    header('Content-type: application/json');
+    echo json_encode($response_array);
 }
 else
 {

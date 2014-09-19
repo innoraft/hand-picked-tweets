@@ -14,7 +14,7 @@
 <body id="one">
 
     <div class="bar">
-        <div id=message class="WorldsBestButton top nodisplay">Messsage</div>
+        <div id=message class="WorldsBestButton top">Messsage</div>
     </div>
     <div style="width: 100%;">
         <button value="press" name="press" class="press">Activate</button>
@@ -106,6 +106,34 @@
             }
         });
     });
+    
+    $('#inputbox').live('keypress',function(e){
+        var p = e.which;
+        var newlabel = $("#inputbox").val();
+        if(p==13){
+            var NewContent = '<li id="Other" class="label WorldsBestButton"><a href="#">Other</a>
+            </li>';
+$(NewContent).insertAfter('#Other');
+            alert(newlabel);
+               $.ajax({
+            url: 'host.php',
+            data: {
+                "newlabel": newlabel,
+                "flag": "newlabel"
+            },
+            type: 'get',
+            success: function (result) {
+ console.log(result);
+               /* $("#message").html(result.status);
+                $("#message").removeClass("nodisplay").delay(2000).queue(function (next) {
+                    $(this).addClass("nodisplay");
+                    next();
+                });*/
+            }
+        });
+        }        
+    });
+    
 </script>
 
 </html>
