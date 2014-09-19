@@ -2,7 +2,7 @@
 
 //Sample URL for getting tweets : ..hand-picked-tweets/host.php?flag=fetch&label=humour&num=50
 
-switch($_SERVER['REQUEST_METHOD'])
+switch($_SERVER['REQUEST_METHOD']) //Through this we will be able to use both POST and GET whenever required
 {
 case 'GET':
     $tweetid=($_GET['tweetid']);
@@ -21,7 +21,7 @@ case 'POST':
 //Server Connection file
 require_once 'database-connection.php'; 
 
-if ($flag=="put")
+if ($flag=="put") //put flag means the mod wants to push some tweets in the database
 {
     $url = "https://api.twitter.com/1/statuses/oembed.json?id=$tweetid";
     $ch = curl_init();
@@ -29,13 +29,12 @@ if ($flag=="put")
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_URL,$url);
     $result=curl_exec($ch);
-    curl_close($ch);
+    curl_close($ch);//curl is used to get the oembed code of the perticular tweet from twitter servers with the help of tweet id
     $embed=json_decode($result, true);
     $embed=$embed["html"];
     $labelquery=mysql_query("select `label-id` from label where `label-name` = '$label';");
     $labelid = mysql_fetch_array($labelquery);
     $labelid=$labelid['label-id'];
-    //echo "INSERT INTO tweets VALUES ($tweetid,$labelid,'$embed');";
     $query = "INSERT INTO tweets VALUES ($tweetid,$labelid,'$embed');";
     if(mysql_query($query, $con))
     {
@@ -45,11 +44,11 @@ if ($flag=="put")
     {
         $response_array['status'] = 'MySql Error :(';  
     }
-    header('Content-type: application/json');
+    header('Content-type: application/json'); //setting the response header
     echo json_encode($response_array);
 }
 
-else if ($flag=="fetch")
+else if ($flag=="fetch") //flag fetch indicates the user wants all tweets in JSON format
 
 {
     //Server Connection file
@@ -59,15 +58,14 @@ else if ($flag=="fetch")
     $tweets = array();
     while($tweet = mysql_fetch_array($result, MYSQL_ASSOC))
     {
-        $tweets[$tweet['label-name']][$tweet['tweet-id']] = $tweet['tweet-oembed'];
-    }
-    //var_dump($tweets);
+   $tweets[$tweet['label-name']][$tweet['tweet-id']] = $tweet['tweet-oembed'];
+    }//Creating an array in the above formate to produce the JSON as discussed earlier
     header('Content-type: application/json');
     $output = json_encode(array($tweets));
     echo $output;
 }
 
-if ($flag=="newlabel")
+if ($flag=="newlabel") // New label means the mod wants to send a new label to the database
 {
     $query = "insert into `label` values (NULL,'$newlabel');";
     if(mysql_query($query, $con))
@@ -82,7 +80,7 @@ if ($flag=="newlabel")
     header('Content-type: application/json');
     echo json_encode($response_array);
 }
-else
+else //when no flag is set up
 {
     echo "flag error";
 }
