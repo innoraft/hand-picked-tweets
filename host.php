@@ -61,11 +61,8 @@ else if ($flag=="fetch") //flag fetch indicates the user wants all tweets in JSO
    $tweets[$tweet['label-name']][$tweet['tweet-id']] = $tweet['tweet-oembed'];
     }//Creating an array in the above formate to produce the JSON as discussed earlier
     header('Content-type: application/json');
-<<<<<<< HEAD
     $output = json_encode( $tweets);
-=======
     $output = json_encode(array($tweets));
->>>>>>> 322c85ddb4105fadb44754b747b74ca1de0d8857
     echo $output;
     
 }
