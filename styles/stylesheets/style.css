@@ -1,0 +1,30 @@
+/* line 1, ../sass/style.scss */
+div.header h1 {
+  font-family: 'Patua One', cursive, serif;
+  color: #555;
+  margin-bottom: 1em;
+}
+
+/* line 8, ../sass/style.scss */
+.container {
+  max-width: 560px;
+}
+
+/* line 12, ../sass/style.scss */
+body {
+  background: #eee;
+  font-family: 'Droid Sans', sans-serif;
+}
+
+/* line 17, ../sass/style.scss */
+.category {
+  background: #FFFA6B;
+  line-height: 80px;
+  font-size: 1.4em;
+  padding: 0 1em;
+}
+/* line 22, ../sass/style.scss */
+.category .glyphicon {
+  line-height: 80px;
+  font-size: 14px;
+}
