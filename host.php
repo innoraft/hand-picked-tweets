@@ -11,9 +11,8 @@ case 'GET':
             $tweetid=($_GET['tweetid']);
             $label=strtolower($_GET['label']);
             break;
-    /*    case 'newlabel':
+        case 'newlabel':
             $newlabel = strtolower($_GET['newlabel']);
-            break;*/
     }
      break;
 case 'POST':
@@ -73,18 +72,32 @@ else if ($flag=="fetch") //flag fetch indicates the user wants all tweets in JSO
     
 }
 
-if ($flag=="newlabel") // this is to get all labels from database and to send in json format.
+else if ($flag=="newlabel") // New label means the mod wants to send a new label to the database
 {
-    $result = mysql_query('select * from `label`;', $con) or die('MySQL Error.');
+    $query = "insert into `label` values (NULL,'$newlabel');";
+    if(mysql_query($query, $con))
+    {
+        $response_array['status'] = "Added $newlabel!";  
+    }
+    else
+    {
+        $response_array['status'] = 'MySql Error :(';  
+    }
+    
+    header('Content-type: application/json');
+    echo json_encode($response_array);
+}
+else if ($flag=="labelretrieval") // New label means the mod wants to send a new label to the database
+{
+ $result = mysql_query('select * from `label`;', $con) or die('MySQL Error.');
     $labeldetail=  array();
     while($label = mysql_fetch_array($result, MYSQL_ASSOC))
     {
         $labeldetail[$label['label-id']]=$label['label-name'];
           
     } 
-     $output = json_encode(($labeldetail));
-     echo $output;
-   
+     echo json_encode(($labeldetail));
+     
 }
 else //when no flag is set up
 {
