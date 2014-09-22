@@ -73,7 +73,7 @@ else if ($flag=="fetch") //flag fetch indicates the user wants all tweets in JSO
     
 }
 
-if ($flag=="newlabel") // New label means the mod wants to send a new label to the database
+if ($flag=="newlabel") // this is to get all labels from database and to send in json format.
 {
     $result = mysql_query('select * from `label`;', $con) or die('MySQL Error.');
     $labeldetail=  array();
@@ -81,7 +81,7 @@ if ($flag=="newlabel") // New label means the mod wants to send a new label to t
     {
         $labeldetail[$label['label-id']]=$label['label-name'];
           
-    }
+    } 
      $output = json_encode(($labeldetail));
      echo $output;
    
