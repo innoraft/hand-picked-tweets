@@ -1,6 +1,6 @@
-CREATE DATABASE hand-picked-tweets;
+CREATE DATABASE `hand-picked-tweets`;
 
-USE hand-picked-tweets;
+USE `hand-picked-tweets`;
 
 -- MySQL dump 10.13  Distrib 5.5.38, for debian-linux-gnu (i686)
 --

@@ -32,3 +32,15 @@ myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
     };
 */    
 }]);
+
+var myApp = angular.module('tweetpage', []);
+// this controller brings the JSON data from a specified paths. 
+myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
+        
+        $http.get('host.php?flag=fetch').success (function(data){
+
+                $scope.tweets=data;               
+                  
+        });   
+}]);
+
