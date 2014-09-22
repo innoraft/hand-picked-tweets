@@ -5,13 +5,17 @@
 switch($_SERVER['REQUEST_METHOD']) //Through this we will be able to use both POST and GET whenever required
 {
 case 'GET':
-    $tweetid=($_GET['tweetid']);
-    $label=strtolower($_GET['label']);
-    $flag=strtolower($_GET['flag']);
-    $num = intval($_GET['num']);
-    $newlabel = strtolower($_GET['newlabel']);
-    echo $newlabel;
-    break;
+    switch ($flag=strtolower($_GET['flag']))
+    {
+        case 'put':
+            $tweetid=($_GET['tweetid']);
+            $label=strtolower($_GET['label']);
+            break;
+    /*    case 'newlabel':
+            $newlabel = strtolower($_GET['newlabel']);
+            break;*/
+    }
+     break;
 case 'POST':
     $tweetid = $_POST['tweetid'];
     $label = strtolower($_POST['label']);
@@ -58,29 +62,29 @@ else if ($flag=="fetch") //flag fetch indicates the user wants all tweets in JSO
     $tweets = array();
     while($tweet = mysql_fetch_array($result, MYSQL_ASSOC))
     {
-   $tweets[$tweet['label-name']][$tweet['tweet-id']] = $tweet['tweet-oembed'];
+   //    $tweets[$tweet['label-name']][$tweet['tweet-id']] = $tweet['tweet-oembed'];
+            $tweets[] = array($tweet['label-name']=>$tweet);  
+       
     }//Creating an array in the above formate to produce the JSON as discussed earlier
-    header('Content-type: application/json');
-    $output = json_encode( $tweets);
-    $output = json_encode(array($tweets));
+   // header('Content-type: application/json');
+  //  $output = json_encode($tweets);
+     $output = json_encode(array($tweets));
     echo $output;
     
 }
 
 if ($flag=="newlabel") // New label means the mod wants to send a new label to the database
 {
-    $query = "insert into `label` values (NULL,'$newlabel');";
-    if(mysql_query($query, $con))
+    $result = mysql_query('select * from `label`;', $con) or die('MySQL Error.');
+    $labeldetail=  array();
+    while($label = mysql_fetch_array($result, MYSQL_ASSOC))
     {
-        $response_array['status'] = "Added $newlabel!";  
+        $labeldetail[$label['label-id']]=$label['label-name'];
+          
     }
-    else
-    {
-        $response_array['status'] = 'MySql Error :(';  
-    }
-    
-    header('Content-type: application/json');
-    echo json_encode($response_array);
+     $output = json_encode(($labeldetail));
+     echo $output;
+   
 }
 else //when no flag is set up
 {
