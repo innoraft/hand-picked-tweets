@@ -5,13 +5,16 @@
 switch($_SERVER['REQUEST_METHOD']) //Through this we will be able to use both POST and GET whenever required
 {
 case 'GET':
-    $tweetid=($_GET['tweetid']);
-    $label=strtolower($_GET['label']);
-    $flag=strtolower($_GET['flag']);
-    $num = intval($_GET['num']);
-    $newlabel = strtolower($_GET['newlabel']);
-    echo $newlabel;
-    break;
+    switch ($flag=strtolower($_GET['flag']))
+    {
+        case 'put':
+            $tweetid=($_GET['tweetid']);
+            $label=strtolower($_GET['label']);
+            break;
+        case 'newlabel':
+            $newlabel = strtolower($_GET['newlabel']);
+    }
+     break;
 case 'POST':
     $tweetid = $_POST['tweetid'];
     $label = strtolower($_POST['label']);
