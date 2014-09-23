@@ -43,4 +43,14 @@ myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
                   
         });   
 }]);
+myApp.filter('unsafe', function($sce) {
+2
+    return function(val) {
+3
+        return $sce.trustAsHtml(val);
+4
+    };
+5
+});
+
 

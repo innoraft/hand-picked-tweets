@@ -43,7 +43,7 @@
 <div data-ng-repeat="label in tweets">
 <div data-ng-repeat="tweet in label">
         <div class="col-xs-12">
-          <p class="tweets">{{tweet}}</p>
+            <div ng-bind-html="tweet | unsafe"></div>
         </div>
 	</div>
 </div>
@@ -53,6 +53,7 @@
       </div>
 
     </div> <!-- /container -->
-
+    <!-- -->
+ <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
 </html>
