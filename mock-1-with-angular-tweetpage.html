@@ -11,7 +11,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
     <title>Hand Picked Tweets</title>
 
     <!-- Bootstrap core CSS -->
@@ -36,14 +35,12 @@
 
 	<div class="row content" ng-controller="MainCtrl">
         <div class="col-xs-12">
-          <p class="category">Label<span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
+          <p class="category">{{gtlabel}}<span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
         </div>
-
-
-<div data-ng-repeat="label in tweets">
+<div data-ng-repeat="(key,label) in tweets">
 <div data-ng-repeat="tweet in label">
         <div class="col-xs-12">
-            <div ng-bind-html="tweet | unsafe"></div>
+            <div ng-show="key===gtlabel" ng-bind-html="tweet | unsafe"></div>
         </div>
 	</div>
 </div>
@@ -54,6 +51,6 @@
 
     </div> <!-- /container -->
     <!-- -->
- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
+ <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </html>

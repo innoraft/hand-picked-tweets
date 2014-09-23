@@ -33,21 +33,12 @@
       <div class="header">
         <h1 class="text-muted text-center">Hand Picked Tweets</h1>
       </div>
-
-      <!--<div class="row content" ng-controller="MainCtrl" ng-repeat="label in labels.details">
-<div> {{labels.details.label.name}} </div>
-</div>-->
-
 	<div class="row content" ng-controller="MainCtrl">
 	<div data-ng-repeat="name in labels">
-<!--<ul>
-  <li data-ng-repeat="name in labels.label">{{name.name}}</li>
-</ul>-->
-
         <div class="col-xs-12">
             <!--this is to print all the labels in the Box.
             The Labels values are stored in "labels" variable in mock-1-logic.js -->
-          <p class="category c-one">{{name}}<span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
+          <a href="./mock-1-with-angular-tweetpage.html?label={{name}}"><p class="category c-one">{{name}}<span class="pull-right glyphicon glyphicon-chevron-right"></span></p></a>
         </div>
 	</div>
       </div>
@@ -57,6 +48,5 @@
       </div>
 
     </div> <!-- /container -->
-
   </body>
 </html>
