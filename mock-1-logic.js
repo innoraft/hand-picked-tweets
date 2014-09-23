@@ -45,7 +45,9 @@ myApp.filter('unsafe', function($sce) {
         return $sce.trustAsHtml(val);
 
     };
-
+     $timeout(function () {
+twttr.widgets.load();
+    });
 });
 
 
