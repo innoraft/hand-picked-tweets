@@ -35,10 +35,10 @@ myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
         
         $http.get('host.php?flag=fetch').success (function(data){
                 $scope.tweets=data;
-				$scope.gtlabel=getlabel;
-                $timeout(function () {
-            twttr.widgets.load();
-        });   
+				$scope.gtlabel=getlabel;   
+            $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+    twttr.widgets.load(); 
+});
         });   
 }]);
 myApp.filter('unsafe', function($sce) {
@@ -48,6 +48,18 @@ myApp.filter('unsafe', function($sce) {
         return $sce.trustAsHtml(val);
 
     };
+
+
+    myApp.directive('onFinishRender', function ($timeout) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+            if (scope.$last === true) {
+                $timeout(function () {
+                    scope.$emit('ngRepeatFinished');
+                });
+            }
+        }
+    }
 });
-
-
+});

@@ -6,6 +6,7 @@
 	<script src="mock-1-logic.js"></script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+      <meta name="twitter:widgets:align" content="center">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,16 +30,18 @@
   </head>
   <body ng-app="tweetpage">
     <div class="container">
-      <div class="header">
+      <div class="nodisplay header">
         <h1 class="text-muted text-center">Hand Picked Tweets</h1>
       </div>
 
 	<div class="row content" ng-controller="MainCtrl">
         <div class="col-xs-12">
-          <p class="category">{{gtlabel}}<span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
+            <a href="./mock-1-with-angular.html">
+          <p class="category top"><span class="pull-left">&#10094;</span>{{gtlabel}}</p>
+            </a>
         </div>
 <div data-ng-repeat="(key,label) in tweets">
-<div data-ng-repeat="tweet in label">
+<div class="tweets" data-ng-repeat="tweet in label">
         <div class="col-xs-12">
             <div ng-show="key===gtlabel" ng-bind-html="tweet | unsafe"></div>
         </div>
