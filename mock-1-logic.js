@@ -36,6 +36,9 @@ myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
         $http.get('host.php?flag=fetch').success (function(data){
                 $scope.tweets=data;
 				$scope.gtlabel=getlabel;
+                $timeout(function () {
+            twttr.widgets.load();
+        });   
         });   
 }]);
 myApp.filter('unsafe', function($sce) {
@@ -45,11 +48,6 @@ myApp.filter('unsafe', function($sce) {
         return $sce.trustAsHtml(val);
 
     };
-     $timeout(function () {
-twttr.widgets.load();
-    });
 });
-
-
 
 
