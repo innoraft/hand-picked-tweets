@@ -1,14 +1,18 @@
-var getlabel = location.search.split('label=')[1];
-
 var myApp = angular.module('labelpage', []);
 // this controller brings the JSON data from a specified paths. 
 myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
         
         $http.get('host.php?flag=labelretrieval').success (function(data){
             //labels stores the JSON data which carries the Label details with ID
-                $scope.labels=data;             
+                $scope.labels=data;
+                
              //JSON format is {"1":"humour","2": "business"..};
-            
+         //   var i=1; 
+         //   alert(data[i]);
+                //for(var i=0; i<data.Length;i++)
+          //      alert(data.Length);
+               
+                  
         });
     
 /*	$scope.labels = {};
@@ -34,32 +38,19 @@ var myApp = angular.module('tweetpage', []);
 myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
         
         $http.get('host.php?flag=fetch').success (function(data){
-                $scope.tweets=data;
-				$scope.gtlabel=getlabel; 
-            $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
-    twttr.widgets.load(); 
-});
+
+                $scope.tweets=data;               
+               
         });   
 }]);
+//this filter is used to convert plain Json text as html text.
 myApp.filter('unsafe', function($sce) {
 
     return function(val) {
 
-        return $sce.trustAsHtml(val);
+            return $sce.trustAsHtml(val);
 
     };
+});
 
 
-    myApp.directive('onFinishRender', function ($timeout) {
-    return {
-        restrict: 'A',
-        link: function (scope, element, attr) {
-            if (scope.$last === true) {
-                $timeout(function () {
-                    scope.$emit('ngRepeatFinished');
-                });
-            }
-        }
-    }
-});
-});

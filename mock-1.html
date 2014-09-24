@@ -8,12 +8,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+     <script  src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+    
     <title>Hand Picked Tweets</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
+  
     <link rel="stylesheet" href="styles/stylesheets/style.css">
 
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Patua+One' rel='stylesheet' type='text/css'>
@@ -25,45 +28,59 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body ng-app="route1">
 
-    <div class="container">
-      <div class="header">
-        <h1 class="text-muted text-center">Hand Picked Tweets</h1>
-      </div>
-
-      <div class="row content">
-        <div class="col-xs-12">
-          <p class="category c-one">Lorem Ipsum <span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
+      <div class="container">
+        <div class="header">
+            <h1 class="text-muted text-center">Hand Picked Tweets</h1>
         </div>
-        <div class="col-xs-12">
-          <p class="category c-two">Lorem Ipsum <span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
-        </div>
-        <div class="col-xs-12">
-          <p class="category c-three">Lorem Ipsum <span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
-        </div>
-        <div class="col-xs-12">
-          <p class="category c-four">Lorem Ipsum <span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
-        </div>
-        <div class="col-xs-12">
-          <p class="category c-one">Lorem Ipsum <span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
-        </div>
-        <div class="col-xs-12">
-          <p class="category c-two">Lorem Ipsum <span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
-        </div>
-        <div class="col-xs-12">
-          <p class="category c-three">Lorem Ipsum <span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
-        </div>
-        <div class="col-xs-12">
-          <p class="category c-four">Lorem Ipsum <span class="pull-right glyphicon glyphicon-chevron-right"></span></p>
-        </div>
-      </div>
-
-      <div class="footer">
+          <div ng-controller="MainCtrl">
+              <div ng-view></div></div>
+         
+        <div class="footer">
         <p class="pull-right">&copy; Company 2014</p>
-      </div>
+        </div>
 
     </div> <!-- /container -->
+    <script>
+         var module = angular.module("route1", ['ngRoute']);
 
+    module.config(['$routeProvider',
+        function($routeProvider) {
+            $routeProvider.
+                    when('/', {templateUrl: 'mock-1-with-angular.html'}).
+                    when('/label/:param', {templateUrl: 'mock-1-with-angular-tweetpage.html'}).
+                    otherwise({redirectTo: '/'});
+        }]);
+
+ //   module.controller("RouteController", function($scope, $routeParams) {
+ //       $scope.param = $routeParams.param;
+ //   })
+    
+    module.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
+        
+        $http.get('host.php?flag=labelretrieval').success (function(data){
+            //labels stores the JSON data which carries the Label details with ID
+                
+        $scope.labels=data; 
+      //  alert(data);
+        });
+        $http.get('host.php?flag=fetch').success (function(data1){
+
+                $scope.tweets=data1;/*alert(data1);*/});
+    }]);
+module.filter('unsafe', function($sce) {
+
+    return function(val) {
+
+            return $sce.trustAsHtml(val);
+
+    };
+});
+     
+    
+    </script>
+    <script  src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
   </body>
 </html>

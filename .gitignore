@@ -1,7 +1,6 @@
 # Ignore temporary sass files
 */.sass-cache
 */.sass-cache/*
-.sass-cache/*
 
 #My Files#
 ##########
