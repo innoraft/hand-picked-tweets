@@ -29,6 +29,7 @@ body {
   line-height: 80px;
   font-size: 1.4em;
   padding: 0 1em;
+    text-transform: capitalize;
     @include box-shadow(0px .7px 7px .2px rgba(108, 108, 108, 0.75));
   .glyphicon {
     line-height: 80px;
@@ -66,5 +67,5 @@ left: 0;
 }
 
 .tweets{
-padding-top: 15px;
+padding-top: 90px;
 }

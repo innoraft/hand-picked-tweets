@@ -6,7 +6,7 @@
 	<script src="mock-1-logic.js"></script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-      <meta name="twitter:widgets:align" content="center">
+      <meta name="twitter:widgets:data-cards" content="hidden">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,13 +40,13 @@
           <p class="category top"><span class="pull-left">&#10094;</span>{{gtlabel}}</p>
             </a>
         </div>
-<div data-ng-repeat="(key,label) in tweets">
-<div class="tweets" data-ng-repeat="tweet in label">
+        <div class="tweets">
+<div data-ng-repeat="stack in tweets | orderBy:'stack.id'" >
         <div class="col-xs-12">
-            <div ng-show="key===gtlabel" ng-bind-html="tweet | unsafe"></div>
+            <div ng-show="stack.label===gtlabel" ng-bind-html="stack.tweet | unsafe"></div>
         </div>
-	</div>
 </div>
+        </div>
      </div>
 	 <div class="footer">
         <p class="pull-right">&copy; Company 2014</p>

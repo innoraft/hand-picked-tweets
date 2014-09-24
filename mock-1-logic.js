@@ -35,7 +35,8 @@ myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
         
         $http.get('host.php?flag=fetch').success (function(data){
                 $scope.tweets=data;
-				$scope.gtlabel=getlabel;   
+				$scope.gtlabel=getlabel; 
+            console.log($scope.tweets);
             $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
     twttr.widgets.load(); 
 });

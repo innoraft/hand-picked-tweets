@@ -15,6 +15,7 @@ body {
   line-height: 80px;
   font-size: 1.4em;
   padding: 0 1em;
+  text-transform: capitalize;
   -o-box-shadow: 0px 0.7px 7px 0.2px rgba(108, 108, 108, 0.75);
   -ms-box-shadow: 0px 0.7px 7px 0.2px rgba(108, 108, 108, 0.75);
   -moz-box-shadow: 0px 0.7px 7px 0.2px rgba(108, 108, 108, 0.75);
@@ -52,6 +53,6 @@ iframe[id*='twitter-widget'] {
   display: none; }
 
 .tweets {
-  padding-top: 15px; }
+  padding-top: 90px; }
 
 /*# sourceMappingURL=style.css.map */
