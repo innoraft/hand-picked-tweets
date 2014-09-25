@@ -11,22 +11,17 @@ myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
             
         });
     
-/*	$scope.labels = {};
-    $scope.labels = {
-      "label": 
-		[
-			{
-				"name":"humour"
-			},
-			{
-				"name":"business"
-			},
-			{
-				"name":"food"
-			}
-		]
-    };
-*/    
+myApp.directive('myPostRepeatDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+      // iteration is complete, do whatever post-processing
+      // is necessary
+        // SOME FUNCTION
+        //BUT Y U NO WORK
+    }
+  };
+});
+    
 }]);
 
 var myApp = angular.module('tweetpage', []);

@@ -21,8 +21,8 @@
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Patua+One' rel='stylesheet' type='text/css'>
       
       <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100italic,100,300italic,300,400italic,400,600italic,600,700italic,700" rel="stylesheet" type="text/css">
-
       
+      <script src="jss/jquery.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -37,11 +37,11 @@
         <h1 class="text-muted text-center">Hand Picked Tweets</h1>
       </div>
 	<div class="row content" ng-controller="MainCtrl">
-	<div data-ng-repeat="name in labels">
+	<div data-ng-repeat="name in labels" my-post-repeat-directive>
         <div class="col-xs-12">
             <!--this is to print all the labels in the Box.
             The Labels values are stored in "labels" variable in mock-1-logic.js -->
-          <a href="./mock-1-with-angular-tweetpage.html?label={{name}}"><p class="category c-one">{{name}}<span class="pull-right">&#x276d;</span></p></a>
+          <a href="./mock-1-with-angular-tweetpage.html?label={{name}}"><p class="category animate">{{name}}<span class="pull-right">&#x276d;</span></p></a>
         </div>
 	</div>
       </div>
@@ -51,4 +51,11 @@
       </div>
     </div> <!-- /container -->
   </body>
+    <script>
+      $(document).ready(function () {
+    var delay = setTimeout(function(){
+        $(".category").removeClass("animate");
+     }, 100)
+});
+	</script>
 </html>

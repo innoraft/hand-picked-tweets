@@ -1,4 +1,5 @@
 $body-font-color:#444;
+$category-move-to-left:100%;
 
 @mixin box-shadow($shadows...) {
     -o-box-shadow: $shadows;
@@ -42,6 +43,14 @@ body {
     transition: box-shadow .2s;
 
     }
+    webkit-transition: margin-left .2s;
+    transition: margin-left .2s;
+}
+
+.animate{
+    -webkit-transform: rotate(2deg);
+    margin-left:-($category-move-to-left);
+    margin-right:$category-move-to-left;
 }
 
 a, a:hover {

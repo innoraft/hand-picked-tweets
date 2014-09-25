@@ -21,7 +21,9 @@ body {
   -ms-box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75);
   -moz-box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75);
   -webkit-box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75);
-  box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75); }
+  box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75);
+  webkit-transition: margin-left .2s;
+  transition: margin-left .2s; }
   .category .glyphicon {
     line-height: 80px;
     font-size: 14px; }
@@ -34,6 +36,11 @@ body {
     z-index: 10;
     webkit-transition: box-shadow .2s;
     transition: box-shadow .2s; }
+
+.animate {
+  -webkit-transform: rotate(2deg);
+  margin-left: -100%;
+  margin-right: 100%; }
 
 a, a:hover {
   text-decoration: none;
