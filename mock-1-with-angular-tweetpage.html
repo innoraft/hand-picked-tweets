@@ -4,7 +4,7 @@
             <a href="#/"><p class="category"><span class="pull-left glyphicon glyphicon-chevron-left"></span>{{labelsend}}</p></a>
         </div>
         <div data-ng-repeat="label in tweets">
-        <div data-ng-repeat="tweet in label">
+        <div data-ng-repeat="tweet in tweets">
             <div class="col-xs-12">
                 <div ng-bind-html="tweet | unsafe"></div>
                 </div>

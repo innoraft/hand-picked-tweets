@@ -53,9 +53,15 @@
                     otherwise({redirectTo: '/'});
         }]);
 
-    module.controller("RouteController",['$scope','$routeParams', function($scope, $routeParams) {
-            alert($routeParams.param);
+    module.controller("RouteController",['$scope','$routeParams','$http', function($scope, $routeParams,$http) {
+        //    alert($routeParams.param);
             $scope.labelsend = $routeParams.param;
+            var x=$routeParams.param;
+            $http.get('host.php?flag=fetch').success (function(data1){
+              $scope.tweets=data1[x];
+               console.log(data1[x]);
+            });
+            
     }]);
     
     module.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
@@ -66,9 +72,9 @@
         $scope.labels=data; 
       //  alert(data);
         });
-        $http.get('host.php?flag=fetch').success (function(data1){
+  //      $http.get('host.php?flag=fetch').success (function(data1){
 
-                $scope.tweets=data1;/*alert(data1);*/});
+    //            $scope.tweets=data1;/*alert(data1);*/});
     }]);
 module.filter('unsafe', function($sce) {
 
