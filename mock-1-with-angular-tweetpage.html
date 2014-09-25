@@ -71,9 +71,11 @@
             </a>
         </div>
         <div id="tweettop" class="tweets">
-<div data-ng-repeat="stack in tweets | orderBy:'stack.id'" >
+<div data-ng-repeat="stack in tweets | orderBy:'stack.id'" on-last-repeat>
         <div class="col-xs-12">
             <div ng-show="stack.label===gtlabel" ng-bind-html="stack.tweet | unsafe"></div>
+                <div ng-init="twttr.widgets.load();"></div>
+
         </div>
 </div>
         </div>
