@@ -31,29 +31,13 @@ myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
 
 var myApp = angular.module('tweetpage', []);
 // this controller brings the JSON data from a specified paths. 
-
-myApp.directive('onLastRepeat', function() {
-        return function(scope, element, attrs) {
-            if (scope.$last) setTimeout(function(){
-                scope.$emit('onRepeatLast', element, attrs);
-            }, 1);
-        };
-    });
-
 myApp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
-    
-        $scope.$on('onRepeatLast', function(scope, element, attrs){
-             myApp.twttr.widgets.load();
-            console.log("hi");
-      });
-    
+        
         $http.get('host.php?flag=fetch').success (function(data){
-            console.trace();
                 $scope.tweets=data;
 				$scope.gtlabel=getlabel; 
         });   
 }]);
-
 myApp.filter('unsafe', function($sce) {
 
     return function(val) {
