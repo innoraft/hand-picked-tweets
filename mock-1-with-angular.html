@@ -34,14 +34,14 @@
   <body ng-app="labelpage">
     <div class="container">
       <div class="header">
-        <h1 class="text-muted text-center">Hand Picked Tweets</h1>
+        <h1 class="text-muted text-center animate">Hand Picked Tweets</h1>
       </div>
 	<div class="row content" ng-controller="MainCtrl">
 	<div data-ng-repeat="name in labels" my-post-repeat-directive>
         <div class="col-xs-12">
             <!--this is to print all the labels in the Box.
             The Labels values are stored in "labels" variable in mock-1-logic.js -->
-          <a href="./mock-1-with-angular-tweetpage.html?label={{name}}"><p class="category animate">{{name}}<span class="pull-right">&#x276d;</span></p></a>
+          <a href="./mock-1-with-angular-tweetpage.html?label={{name}}"><p class="category">{{name}}<span class="pull-right">&#x276d;</span></p></a>
         </div>
 	</div>
       </div>
@@ -53,9 +53,70 @@
   </body>
     <script>
       $(document).ready(function () {
+          /*
     var delay = setTimeout(function(){
-        $(".category").removeClass("animate");
+        $(".header").addClass("animate");
      }, 100)
-});
+});*/
+           $('.header').click(function () {
+               var t=100
+        setTimeout('pluscalss("body","bodycolor1");',2*t);
+        setTimeout('pluscalss("body","bodycolor2");',4*t);
+        setTimeout('pluscalss("body","bodycolor3");',6*t);           setTimeout('pluscalss("body","bodycolor4");',8*t);
+        setTimeout('pluscalss("body","bodycolor5");',10*t);
+        setTimeout('pluscalss("body","bodycolor6");',12*t);
+        setTimeout('pluscalss("body","bodycolor7");',14*t);
+        setTimeout('pluscalss("body","bodycolor8");',16*t);
+        setTimeout('pluscalss("body","bodycolor9");',18*t);
+               setTimeout('minusclass("body","bodycolor9");',20*t);
+               setTimeout('minusclass("body","bodycolor8");',22*t);
+               setTimeout('minusclass("body","bodycolor7");',24*t);
+               setTimeout('minusclass("body","bodycolor6");',26*t);
+               setTimeout('minusclass("body","bodycolor5");',28*t);
+               setTimeout('minusclass("body","bodycolor4");',30*t);
+               setTimeout('minusclass("body","bodycolor3");',32*t);
+               setTimeout('minusclass("body","bodycolor2");',34*t);
+               setTimeout('minusclass("body","bodycolor1");',36*t);
+        });
+      });
+        
+        function pluscalss(id, classname) {
+$(id).addClass(classname);
+         return this;
+     }
+      
+        function minusclass(id, classname) {
+$(id).removeClass(classname);
+         return this;
+     }
+//                       $('body').removeClass("bodycolor1 bodycolor2 bodycolor3 bodycolor4 bodycolor5 bodycolor6 bodycolor7 bodycolor8 bodycolor9");
+
+        
+/*        function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}*/
+    
 	</script>
 </html>
+
+<!--    <script>
+      $(document).ready(function () {
+          /*
+    var delay = setTimeout(function(){
+        $(".header").addClass("animate");
+     }, 100)
+});*/
+           $('.header').click(function () {
+             $('body').addClass('bodycolor1').delay(800).queue(function(){
+                 $('body').addClass('bodycolor2');
+             });
+        });
+      });
+        
+        
+	</script>-->

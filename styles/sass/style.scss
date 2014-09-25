@@ -1,5 +1,4 @@
 $body-font-color:#444;
-$category-move-to-left:100%;
 
 @mixin box-shadow($shadows...) {
     -o-box-shadow: $shadows;
@@ -23,7 +22,38 @@ div.header h1 {
 body {
   background: #eee;
   font-family: 'Josefin Sans','Droid Sans', sans-serif;
+    webkit-transition: background .5s;
+    transition: background .5s;
 }
+
+.bodycolor1{
+     background: #7F96BB;
+}
+.bodycolor2{
+     background: #B0A1BB;
+}
+.bodycolor3{
+     background: #EA97CF;
+}
+.bodycolor4{
+     background: #E092EA;
+}
+.bodycolor5{
+     background: #845C9A;
+}
+.bodycolor6{
+     background: #69489A;
+}
+.bodycolor7{
+     background: #6452DD;
+}
+.bodycolor8{
+     background: #6B89DD;
+}
+.bodycolor9{
+     background: #8FDFEA;
+}
+
 
 .category {
   background: #FFFA6B;
@@ -43,14 +73,10 @@ body {
     transition: box-shadow .2s;
 
     }
-    webkit-transition: margin-left .2s;
-    transition: margin-left .2s;
 }
 
-.animate{
-    -webkit-transform: rotate(2deg);
-    margin-left:-($category-move-to-left);
-    margin-right:$category-move-to-left;
+.animate:hover{
+    -webkit-transform: rotate(720deg);
 }
 
 a, a:hover {
