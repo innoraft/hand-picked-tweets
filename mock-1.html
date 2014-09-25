@@ -49,13 +49,14 @@
         function($routeProvider) {
             $routeProvider.
                     when('/', {templateUrl: 'mock-1-with-angular.html'}).
-                    when('/label/:param', {templateUrl: 'mock-1-with-angular-tweetpage.html'}).
+                    when('/label/:param', {templateUrl: 'mock-1-with-angular-tweetpage.html',controller: 'RouteController'}).
                     otherwise({redirectTo: '/'});
         }]);
 
- //   module.controller("RouteController", function($scope, $routeParams) {
- //       $scope.param = $routeParams.param;
- //   })
+    module.controller("RouteController",['$scope','$routeParams', function($scope, $routeParams) {
+            alert($routeParams.param);
+            $scope.labelsend = $routeParams.param;
+    }]);
     
     module.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
         
