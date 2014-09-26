@@ -62,7 +62,7 @@
   <body ng-app="route1">
 
       <div class="container">
-        <div class="header" ng-class="($op=='on') ? 'nodisplay' : 'opop'">
+        <div class="header">
             <h1 class="text-muted text-center">Hand Picked Tweets</h1>
         </div>
           <div ng-controller="MainCtrl">
@@ -137,13 +137,14 @@ $(id).removeClass(classname);
      }
 
         
-          $(document).ready(function () {
+          /*$(document).ready(function () {
 
            $('.category').click(function () {
                console.log("kjk");
                  $('.header').toggleClass('nodisplay');
              });
           });
+          */
 //                       $('body').removeClass("bodycolor1 bodycolor2 bodycolor3 bodycolor4 bodycolor5 bodycolor6 bodycolor7 bodycolor8 bodycolor9");
 
         
