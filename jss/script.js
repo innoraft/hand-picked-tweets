@@ -12,3 +12,12 @@ var namespace=angular.module("mainModule", []);
  
         }]
 );
+var routeApp=angular.module("route1", ['ngRoute']);
+routeApp.config(['$routeProvider',
+        function($routeProvider) {
+            $routeProvider.
+                    when('/', {templateUrl: 'mock-1-with-angular.html'});
+                    
+        }]);
+    
+

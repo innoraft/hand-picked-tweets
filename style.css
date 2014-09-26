@@ -41,11 +41,6 @@
 {
     top: 0;
     transition: margin-top .2s linear .5s;
-	z-index:100;
-	position:absolute;
-	width:100% !important;
-	padding: 5px !important;
-
 }
 
 .nodisplay
