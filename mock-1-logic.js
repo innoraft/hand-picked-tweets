@@ -13,12 +13,9 @@ var module = angular.module("route1", ['ngRoute']);
     module.controller("RouteController",['$scope','$routeParams','$http', function($scope, $routeParams,$http) {
         //    alert($routeParams.param);
             $scope.labelsend = $routeParams.param;
-            var x=$routeParams.param;
-            $http.get('host.php?flag=fetch').success (function(data1){
-              $scope.tweets=data1[x];
-                //$scope.gtlabel=getlabel; 
-               console.log(data1[x]);
-              
+            $scope.gtlabel=$routeParams.param;
+            $http.get('host.php?flag=fetch').success (function(tweetdata){
+              $scope.tweets=tweetdata;
             });
             
             

@@ -26,7 +26,7 @@ require_once 'database-connection.php';
 
 if ($flag=="put") //put flag means the mod wants to push some tweets in the database
 {
-    $url = "https://api.twitter.com/1/statuses/oembed.json?id=$tweetid";
+    $url="https://api.twitter.com/1/statuses/oembed.json?id=$tweetid&omit_script=true";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -61,12 +61,10 @@ else if ($flag=="fetch") //flag fetch indicates the user wants all tweets in JSO
     $tweets = array();
     while($tweet = mysql_fetch_array($result, MYSQL_ASSOC))
     {
-       $tweets[$tweet['label-name']][$tweet['tweet-id']] = $tweet['tweet-oembed'];
-            //$tweets[] = array($tweet['label-name']=>$tweet);        
+       //$tweets[$tweet['label-name']][$tweet['tweet-id']] = $tweet['tweet-oembed'];
+        $tweets[] = array("label"=>$tweet['label-name'],"id"=>$tweet['tweet-id'],"tweet"=>$tweet['tweet-oembed']); 
     }//Creating an array in the above formate to produce the JSON as discussed earlier
      header('Content-type: application/json');
-   // $output = json_encode($tweets);
-     //$output = urldecode(stripslashes(json_encode(array($tweets))));
 	 $output = json_encode($tweets);
     echo $output;
     
