@@ -22,14 +22,25 @@ var module = angular.module("route1", ['ngRoute']);
             
     }]);
 
- module.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
+    // A directive that runs the twitter widget loading code.
+    // Recommended to be used with ng-repeat or ng-show that renders embed tweet HTML
+    module.directive('ngTweetsRender', function($timeout) {
+      return function(scope, element, attrs) {
+        // We need to the use $timeout so the executing of this is queued in the same $digest cycle
+        // Refer - http://www.sitepoint.com/understanding-angulars-apply-digest/
+        $timeout(function(){
+            window.twttr.widgets.load();
+        });
+      };
+    });
+
+ module.controller('MainCtrl', ['$scope','$http', '$timeout', function ($scope,$http, $timeout) {
         
         $http.get('host.php?flag=labelretrieval').success (function(data){
             //labels stores the JSON data which carries the Label details with ID
                 
         $scope.labels=data; 
         });
-
     }]);
 module.filter('unsafe', function($sce) {
 

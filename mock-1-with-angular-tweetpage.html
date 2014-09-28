@@ -5,9 +5,8 @@
             </a>
         </div>
         <div id="tweettop" class="tweets">
-<div data-ng-repeat="stack in tweets | orderBy:'stack.id'">
+        <div ng-repeat="stack in tweets | orderBy:'stack.id'" ng-tweets-render>
         <div class="col-xs-12">
-<!--            <div ng-bind-html="tweet | unsafe"></div>-->
             <div ng-show="stack.label===gtlabel" ng-bind-html="stack.tweet | unsafe"></div>
         </div>
 </div>
