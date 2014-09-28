@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="shortcut icon" href="favicon.png">
        <link rel="stylesheet" href="css/bootstrap.min.css">
 
      <script  src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -62,15 +62,13 @@
   <body ng-app="route1">
 
       <div class="container">
-        <div class="header" ng-class="($op=='on') ? 'nodisplay' : 'opop'">
-            <h1 class="text-muted text-center">Hand Picked Tweets</h1>
-        </div>
+
           <div ng-controller="MainCtrl">
               <!--contains other html page here -->
               <div ng-view></div></div>
              
-        <div class="footer">
-        <p class="pull-right">&copy; Company 2014</p>
+        <div class="footer clearfix">
+        <p class="pull-right">Built by the mischievous (but hardworking) interns @ <a href="http://www.innoraft.com/contact">Innoraft Solutions</a></p>
         </div>
                     <a href="#tweettop"><div class="backtotop nodisplay" ng-click="scrollTo('top')"><div class="backtotopin">&#10095</div></div></a>
     </div> <!-- /container -->
