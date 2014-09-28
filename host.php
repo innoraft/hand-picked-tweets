@@ -8,7 +8,7 @@ case 'GET':
     switch ($flag=strtolower($_GET['flag']))
     {
         case 'put':
-            $tweetid=($_GET['tweetid']);
+            $tweetid=$_GET['tweetid'];
             $label=strtolower($_GET['label']);
             break;
         case 'newlabel':

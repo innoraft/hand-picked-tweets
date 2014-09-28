@@ -40,6 +40,11 @@ body {
 .bodycolor9 {
   background: #8FDFEA; }
 
+.arrow {
+  font-family: 'Cabin Condensed','Patua One';
+  font-weight: 600;
+  font-size: 40px; }
+
 .category {
   background: #FFFA6B;
   line-height: 80px;
