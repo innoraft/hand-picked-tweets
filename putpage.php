@@ -4,7 +4,7 @@ require_once '_globals.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -107,7 +107,7 @@ require_once '_globals.php';
         var p = e.which;
         var newlabel = $("#inputbox").val();
         if(p==13){
-            var NewContent = '<li id="Other" class="label WorldsBestButton"><a href="#">Other</a></li>';
+            var NewContent = '<li id="Other" class="label WorldsBestButton"><a href="#">other</a></li>';
 $(NewContent).insertAfter('#Other');
             alert(newlabel);
                $.ajax({
@@ -117,13 +117,12 @@ $(NewContent).insertAfter('#Other');
                 "flag": "newlabel"
             },
             type: 'get',
-            success: function (result) {
- console.log(result);
-               /* $("#message").html(result.status);
+            success: function (result){
+                $("#message").html(result.status);
                 $("#message").removeClass("nodisplay").delay(2000).queue(function (next) {
                     $(this).addClass("nodisplay");
                     next();
-                });*/
+                });
             }
         });
         }        

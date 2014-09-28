@@ -10,11 +10,13 @@ var module = angular.module("route1", ['ngRoute']);
                     otherwise({redirectTo: '/'});
         }]);
 
-    module.controller("RouteController",['$scope','$routeParams','$http', function($scope, $routeParams,$http) {
+    module.controller("RouteController",['$scope','$routeParams','$http','$rootScope', function($scope,$routeParams,$http,$rootScope) {
         //    alert($routeParams.param);
         $op='on';
             $scope.labelsend = $routeParams.param;
-            $scope.gtlabel=$routeParams.param;
+            //$scope.labelsend = data;
+            $scope.gtlabel=$rootScope.labels;
+            console.log($rootScope.labels);
             $http.get('host.php?flag=fetch').success (function(tweetdata){
               $scope.tweets=tweetdata;
             });
@@ -34,13 +36,14 @@ var module = angular.module("route1", ['ngRoute']);
       };
     });
 
- module.controller('MainCtrl', ['$scope','$http', '$timeout', function ($scope,$http, $timeout) {
+ module.controller('MainCtrl', ['$scope','$http', '$timeout','$rootScope', function ($scope,$http, $timeout, $rootScope) {
         
         $http.get('host.php?flag=labelretrieval').success (function(data){
             //labels stores the JSON data which carries the Label details with ID
                 
-        $scope.labels=data; 
+        $rootScope.labels=data; 
         });
+
     }]);
 module.filter('unsafe', function($sce) {
 

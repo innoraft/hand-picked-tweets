@@ -27,8 +27,8 @@ DROP TABLE IF EXISTS `label`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `label` (
-  `label-id` int(11) NOT NULL AUTO_INCREMENT,
-  `label-name` varchar(45) NOT NULL,
+  `label-id` varchar(60) NOT NULL,
+  `label-name` varchar(45) NOT NULL UNIQUE,
   PRIMARY KEY (`label-id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -37,11 +37,11 @@ CREATE TABLE `label` (
 -- Dumping data for table `label`
 --
 
-LOCK TABLES `label` WRITE;
+/*LOCK TABLES `label` WRITE;*/
 /*!40000 ALTER TABLE `label` DISABLE KEYS */;
-INSERT INTO `label` VALUES (1,'humour');
+/*INSERT INTO `label` VALUES (1,'humour');*/
 /*!40000 ALTER TABLE `label` ENABLE KEYS */;
-UNLOCK TABLES;
+/*UNLOCK TABLES;*/
 
 --
 -- Table structure for table `tweets`
@@ -52,7 +52,7 @@ DROP TABLE IF EXISTS `tweets`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tweets` (
   `tweet-id` BIGINT NOT NULL,
-  `tweet-label-id` int(11) NOT NULL,
+  `tweet-label-id` varchar(60) NOT NULL,
   `tweet-oembed` BLOB NOT NULL,
   KEY `tweet-lable-id_idx` (`tweet-label-id`),
   CONSTRAINT `tweet-label-id` FOREIGN KEY (`tweet-label-id`) REFERENCES `label` (`label-id`) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -63,11 +63,8 @@ CREATE TABLE `tweets` (
 -- Dumping data for table `tweets`
 --
 
-LOCK TABLES `tweets` WRITE;
 /*!40000 ALTER TABLE `tweets` DISABLE KEYS */;
-INSERT INTO `tweets` VALUES (12132435,1,'somelongtext');
 /*!40000 ALTER TABLE `tweets` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -77,5 +74,15 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+DELIMITER //
+CREATE PROCEDURE inputlabel
+(IN label varchar(45))
+BEGIN
+    DECLARE labelid varchar(60);
+    SET labelid = REPLACE(label, ' ', '-');
+    INSERT INTO `label` VALUES (lower(labelid),label);
+END ; //
+    
 
 -- Dump completed on 2014-09-04 17:57:10
