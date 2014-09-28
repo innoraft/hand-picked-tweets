@@ -44,7 +44,7 @@ if ($flag=="put") //put flag means the mod wants to push some tweets in the data
     }
     else
     {
-       $response_array['tweetid'] = $tweetid; $url="https://api.twitter.com/1/statuses/oembed.json?   id=$tweetid&omit_script=true";
+       $response_array['tweetid'] = $tweetid; $url="https://api.twitter.com/1/statuses/oembed.json?id=$tweetid&omit_script=true";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -72,7 +72,6 @@ if ($flag=="put") //put flag means the mod wants to push some tweets in the data
 }
 
 else if ($flag=="fetch") //flag fetch indicates the user wants all tweets in JSON format
-
 {
     //Server Connection file
     require_once 'database-connection.php';
