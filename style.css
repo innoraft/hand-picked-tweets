@@ -40,6 +40,8 @@
 .top
 {
     top: 0;
+    position: fixed !important;
+    width:100% !important;
     transition: margin-top .2s linear .5s;
 }
 

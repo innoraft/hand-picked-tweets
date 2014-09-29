@@ -1,47 +1,81 @@
+/* line 12, ../sass/style.scss */
 div.header h1 {
   font-family: 'Josefin Sans','Patua One', cursive, serif;
-  color: #555;
-  margin-bottom: 1em;
-  font-weight: 900; }
+  color: #009696;
+  text-shadow: 1px 1px 2px #bbb;
+  margin-bottom: 0.8em;
+  font-weight: 900;
+}
 
+/* line 20, ../sass/style.scss */
 .container {
-  max-width: 560px; }
+  max-width: 560px;
+}
 
+/* line 24, ../sass/style.scss */
 body {
   background: #eee;
   font-family: 'Josefin Sans','Droid Sans', sans-serif;
   webkit-transition: background .5s;
-  transition: background .5s; }
+  transition: background .5s;
+}
 
+/* line 31, ../sass/style.scss */
 .bodycolor1 {
-  background: #7F96BB; }
+  background: #7F96BB;
+}
 
+/* line 34, ../sass/style.scss */
 .bodycolor2 {
-  background: #B0A1BB; }
+  background: #B0A1BB;
+}
 
+/* line 37, ../sass/style.scss */
 .bodycolor3 {
-  background: #EA97CF; }
+  background: #EA97CF;
+}
 
+/* line 40, ../sass/style.scss */
 .bodycolor4 {
-  background: #E092EA; }
+  background: #E092EA;
+}
 
+/* line 43, ../sass/style.scss */
 .bodycolor5 {
-  background: #845C9A; }
+  background: #845C9A;
+}
 
+/* line 46, ../sass/style.scss */
 .bodycolor6 {
-  background: #69489A; }
+  background: #69489A;
+}
 
+/* line 49, ../sass/style.scss */
 .bodycolor7 {
-  background: #6452DD; }
+  background: #6452DD;
+}
 
+/* line 52, ../sass/style.scss */
 .bodycolor8 {
-  background: #6B89DD; }
+  background: #6B89DD;
+}
 
+/* line 55, ../sass/style.scss */
 .bodycolor9 {
-  background: #8FDFEA; }
+  background: #8FDFEA;
+}
 
+/* line 59, ../sass/style.scss */
+.arrow {
+  font-family: 'Cabin Condensed','Patua One';
+  font-weight: bold;
+  font-size: 40px;
+}
+
+/* line 65, ../sass/style.scss */
 .category {
   background: #FFFA6B;
+  font-weight: bold;
   line-height: 80px;
   font-size: 1.4em;
   padding: 0 1em;
@@ -50,44 +84,70 @@ body {
   -ms-box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75);
   -moz-box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75);
   -webkit-box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75);
-  box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75); }
-  .category .glyphicon {
-    line-height: 80px;
-    font-size: 14px; }
-  .category:hover {
-    -o-box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
-    -ms-box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
-    -moz-box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
-    -webkit-box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
-    box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
-    z-index: 10;
-    webkit-transition: box-shadow .2s;
-    transition: box-shadow .2s; }
+  box-shadow: 0px 1px 4px 0.2px rgba(131, 131, 131, 0.75);
+}
+/* line 73, ../sass/style.scss */
+.category .glyphicon {
+  line-height: 80px;
+  font-size: 14px;
+}
+/* line 77, ../sass/style.scss */
+.category:hover {
+  -o-box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
+  -ms-box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
+  -moz-box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
+  -webkit-box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
+  box-shadow: 0px 0.7px 7px 1px rgba(108, 108, 108, 0.75);
+  z-index: 10;
+  webkit-transition: box-shadow .2s;
+  transition: box-shadow .2s;
+}
 
+/* line 86, ../sass/style.scss */
 .animate:hover {
-  -webkit-transform: rotate(720deg); }
+  -webkit-transform: rotate(720deg);
+}
 
+/* line 90, ../sass/style.scss */
 a, a:hover {
   text-decoration: none;
-  color: #444; }
+  color: #444444;
+}
 
+/* line 96, ../sass/style.scss */
+.intro-message a, .intro-message a:hover,
+.footer a, .footer a:hover {
+  color: #009696;
+  font-weight: bold;
+}
+
+/* line 101, ../sass/style.scss */
 iframe[id*='twitter-widget'] {
   margin-left: auto !important;
-  margin-right: auto !important; }
+  margin-right: auto !important;
+}
 
+/* line 106, ../sass/style.scss */
 .top {
   z-index: 15;
   position: fixed;
   top: 0;
   right: 0;
-  left: 0; }
+  left: 0;
+  text-align: center;
+}
 
+/* line 115, ../sass/style.scss */
 .nodisplay {
-  display: none; }
+  display: none;
+}
 
+/* line 119, ../sass/style.scss */
 .tweets {
-  padding-top: 90px; }
+  padding-top: 90px;
+}
 
+/* line 123, ../sass/style.scss */
 .backtotop {
   -o-box-shadow: 0px 2px 4px 0.2px rgba(131, 131, 131, 0.75);
   -ms-box-shadow: 0px 2px 4px 0.2px rgba(131, 131, 131, 0.75);
@@ -106,34 +166,39 @@ iframe[id*='twitter-widget'] {
   margin: -25px 60px 25px 0;
   position: fixed;
   bottom: 0;
-  display: box; }
-  .backtotop .backtotopin {
-    font-size: 20px;
-    background-color: #ffb179;
-    border: 5px;
-    border-color: rgba(183, 41, 41, 0.85);
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    z-index: 20;
-    display: box;
-    line-height: 230%;
-    vertical-align: middle;
-    text-align: center;
-    transform: rotate(-90deg); }
-    .backtotop .backtotopin:hover {
-      z-index: 10;
-      transform: rotate(270deg);
-      webkit-transition: transform 1s;
-      transition: transform 1s; }
-  .backtotop:hover {
-    -o-box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
-    -ms-box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
-    -moz-box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
-    -webkit-box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
-    box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
-    z-index: 10;
-    webkit-transition: box-shadow .2s;
-    transition: box-shadow .2s; }
-
-/*# sourceMappingURL=style.css.map */
+  display: box;
+}
+/* line 124, ../sass/style.scss */
+.backtotop .backtotopin {
+  font-size: 20px;
+  background-color: #ffb179;
+  border: 5px;
+  border-color: rgba(183, 41, 41, 0.85);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  z-index: 20;
+  display: box;
+  line-height: 230%;
+  vertical-align: middle;
+  text-align: center;
+  transform: rotate(-90deg);
+}
+/* line 138, ../sass/style.scss */
+.backtotop .backtotopin:hover {
+  z-index: 10;
+  transform: rotate(270deg);
+  webkit-transition: transform 1s;
+  transition: transform 1s;
+}
+/* line 147, ../sass/style.scss */
+.backtotop:hover {
+  -o-box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
+  -ms-box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
+  -moz-box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
+  -webkit-box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
+  box-shadow: 0px 3px 7px 1px rgba(108, 108, 108, 0.75);
+  z-index: 10;
+  webkit-transition: box-shadow .2s;
+  transition: box-shadow .2s;
+}

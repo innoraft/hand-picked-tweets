@@ -1,14 +1,13 @@
 <div class="row content">
         <div class="col-xs-12">
             <a href="#/">
-          <p class="category top"><span class="pull-left">&#10094;</span>{{gtlabel}}</p>
+          <p class="category top" data-ng-repeat="(name,id) in gtlabel" ng-show="id===labelsend"><span class="arrow pull-left"><!--Solution 0 .. &#10094;-->&lt;<!-- solution 2 .. ❮--></span>{{name}}</p>
             </a>
         </div>
         <div id="tweettop" class="tweets">
-<div data-ng-repeat="stack in tweets | orderBy:'stack.id'">
+        <div ng-repeat="stack in tweets | orderBy:'stack.id'" ng-tweets-render>
         <div class="col-xs-12">
-<!--            <div ng-bind-html="tweet | unsafe"></div>-->
-            <div ng-show="stack.label===gtlabel" ng-bind-html="stack.tweet | unsafe"></div>
+            <div ng-show="stack.labelid===labelsend" ng-bind-html="stack.tweet | unsafe"></div>
         </div>
 </div>
         </div>

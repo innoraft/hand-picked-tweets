@@ -1,9 +1,20 @@
-	<div class="row content">
-	<div data-ng-repeat="name in labels" my-post-repeat-directive>
-        <div class="col-xs-12">
-            <!--this is to print all the labels in the Box.
-            The Labels values are stored in "labels" variable in mock-1-logic.js -->
-          <a href="#/label/{{name}}"><p class="category">{{name}}<span class="pull-right">&#x276d;</span></p></a>
-        </div>
-	</div>
+  <div class="header">
+    <h1 class="text-muted text-center">Hand Picked Tweets - From Drupalcon Amsterdam 2014</h1>
+  </div>
+
+  <div class="row content">
+
+    <div class="intro-message col-xs-offset-1 col-xs-10 text-center">
+      <p>Drupalcon attendees and enthusiasts create thousands of tweets during the week long event. We bring to you the most useful of those tweets hand-picked and collected under relevant labels.</p>
+      <p>Oh, and we would love to hear your <a href="http://www.innoraft.com/contact">feedback and comments</a> (^-^)</p>
+      <br/>
+    </div>
+    
+  	<div data-ng-repeat="(name,id) in labels">
+      <div class="col-xs-12">
+          <!--this is to print all the labels in the Box.
+          The Labels values are stored in "labels" variable in mock-1-logic.js -->
+        <a href="#/label/{{id}}"><p class="category">{{name}}<span class="arrow pull-right"><!-- solution 0 .. &#x276d; &#10093;-->&gt;<!-- solution 2 .. ❭--></span></p></a>
       </div>
+  	</div>
+  </div>
