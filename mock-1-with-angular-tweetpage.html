@@ -1,7 +1,8 @@
 <div class="row content">
         <div class="col-xs-12">
             <a href="#/">
-          <p class="category top" data-ng-repeat="(name,id) in gtlabel" ng-show="id===labelsend"><span class="arrow pull-left"><!--Solution 0 .. &#10094;-->&lt;<!-- solution 2 .. ❮--></span>{{name}}</p>
+          <p class="category top" data-ng-repeat="val in gtlabel" ng-show="val['label-id']===labelsend">
+              <span class="arrow pull-left"></span>{{val['label-name']}}</p>
             </a>
         </div>
         <div id="tweettop" class="tweets">
@@ -12,5 +13,3 @@
 </div>
         </div>
      </div>
-
-

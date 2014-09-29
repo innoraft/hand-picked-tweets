@@ -1,4 +1,4 @@
-  <div class="header">
+<div class="header">
     <h1 class="text-muted text-center">Hand Picked Tweets - From Drupalcon Amsterdam 2014</h1>
   </div>
 
@@ -10,11 +10,11 @@
       <br/>
     </div>
     
-  	<div data-ng-repeat="(name,id) in labels">
+  	<div data-ng-repeat="stack in labels | orderBy:'weight'">
       <div class="col-xs-12">
           <!--this is to print all the labels in the Box.
           The Labels values are stored in "labels" variable in mock-1-logic.js -->
-        <a href="#/label/{{id}}"><p class="category">{{name}}<span class="arrow pull-right"><!-- solution 0 .. &#x276d; &#10093;-->&gt;<!-- solution 2 .. ❭--></span></p></a>
+        <a href="#/label/{{stack['label-id']}}"><p class="category">{{stack['label-name']}}{{stack['weight']}}<span class="arrow pull-right"></span></p></a>
       </div>
   	</div>
   </div>
