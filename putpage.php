@@ -1,5 +1,6 @@
 <?php
 require_once '_globals.php';
+require_once 'database-connection.php'; 
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,18 +33,20 @@ require_once '_globals.php';
     </div>
     <div class="bar bottom">
         <ul class="">
+            
+            <?php
+    
+    $getlabels=mysql_query("select `label-name` from label;",$con);
+    while($label= mysql_fetch_array($getlabels, MYSQL_ASSOC))
+    {
+        echo '<li id="'.$label['label-name'].'" class="label nolist WorldsBestButton"><a href="#">'.$label['label-name'].'</a>"';
+
+    }
+            ?>
+            
             <li id="Humour" class="label nolist WorldsBestButton"><a href="#">Humour</a>
             </li>
-            <li id="Business" class="label WorldsBestButton nolist"><a href="#">Business</a>
-            </li>
-            <li id="Home" class="label WorldsBestButton nolist"><a href="#">Home</a>
-            </li>
-            <li id="Political" class="label WorldsBestButton nolist"><a href="#">Political</a>
-            </li>
-            <li id="Food" class="label WorldsBestButton nolist"><a href="#">Food</a>
-            </li>
-            <li id="Other" class="label WorldsBestButton nolist"><a href="#">Other</a>
-            </li>
+
             <li id="NewLabel" class="WorldsBestButton nolist">
                 <input id="inputbox" class="ibox" type="text" placeholder="New Label">
             </li>
