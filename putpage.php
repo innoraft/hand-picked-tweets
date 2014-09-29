@@ -39,13 +39,10 @@ require_once 'database-connection.php';
     $getlabels=mysql_query("select `label-name` from label;",$con);
     while($label= mysql_fetch_array($getlabels, MYSQL_ASSOC))
     {
-        echo '<li id="'.$label['label-name'].'" class="label nolist WorldsBestButton"><a href="#">'.$label['label-name'].'</a>"';
+        echo '<li id="'.$label['label-name'].'" class="label nolist WorldsBestButton"><a href="#">'.$label['label-name'].'</a></li>';
 
     }
             ?>
-            
-            <li id="Humour" class="label nolist WorldsBestButton"><a href="#">Humour</a>
-            </li>
 
             <li id="NewLabel" class="WorldsBestButton nolist">
                 <input id="inputbox" class="ibox" type="text" placeholder="New Label">
