@@ -17,7 +17,7 @@ require_once 'database-connection.php';
         <div id=message class="WorldsBestButton top nodisplay">Messsage</div>
         <div class="press">Activate</div>
     <div class="content">
-        <a class="twitter-timeline" href="<?php echo $GLOBALS['TWITTER_TIMELINE_LINK']?>" data-widget-id="<?php echo $GLOBALS['TWITTER_DATA_WIDGET_ID']?>">Tweets from https://twitter.com/sumitsinha/lists/test-hpt</a>
+        <a class="twitter-timeline" href="<?php echo $GLOBALS['TWITTER_TIMELINE_LINK']?>" data-widget-id="<?php echo $GLOBALS['TWITTER_DATA_WIDGET_ID']?>">Tweets from Drupalcon Attendees</a>
         <script>
             ! function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0],
