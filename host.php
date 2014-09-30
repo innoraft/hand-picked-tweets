@@ -111,10 +111,12 @@ else if ($flag=="labelretrieval") // New label means the mod wants to send a new
     $labeldetail=  array();
     while($label = mysql_fetch_array($result, MYSQL_ASSOC))
     {
-        $labeldetail[$label['label-name']]=$label['label-id'];
+        $labeldetail[]=  array("label-id"=>$label['label-id'],"label-name"=>$label['label-name'],"weight"=>$label['weight']);
+        
           
     } 
-     echo json_encode($labeldetail);
+    
+    echo json_encode($labeldetail);
      
 }
 else //when no flag is set up

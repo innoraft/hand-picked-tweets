@@ -16,6 +16,7 @@ var module = angular.module("route1", ['ngRoute']);
             $scope.labelsend = $routeParams.param;
             //$scope.labelsend = data;
             $scope.gtlabel=$rootScope.labels;
+            
             console.log($rootScope.labels);
             $http.get('host.php?flag=fetch').success (function(tweetdata){
               $scope.tweets=tweetdata;
@@ -42,6 +43,7 @@ var module = angular.module("route1", ['ngRoute']);
             //labels stores the JSON data which carries the Label details with ID
                 
         $rootScope.labels=data; 
+        
         });
 
     }]);

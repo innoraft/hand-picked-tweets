@@ -29,6 +29,7 @@ DROP TABLE IF EXISTS `label`;
 CREATE TABLE `label` (
   `label-id` varchar(60) NOT NULL,
   `label-name` varchar(45) NOT NULL UNIQUE,
+    `weight` int(11) NOT NULL,
   PRIMARY KEY (`label-id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
