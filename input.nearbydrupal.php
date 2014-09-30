@@ -44,9 +44,6 @@ require_once 'database-connection.php';
     }
             ?>
 
-            <li id="NewLabel" class="WorldsBestButton nolist">
-                <input id="inputbox" class="ibox" type="text" placeholder="New Label">
-            </li>
         </ul>
     </div>
 </body>
