@@ -18,9 +18,7 @@ var module = angular.module("route1", ['ngRoute']);
             $scope.gtlabel=$rootScope.labels;
             
             console.log($rootScope.labels);
-            $http.get('host.php?flag=fetch').success (function(tweetdata){
-              $scope.tweets=tweetdata;
-            });
+           
             
             
     }]);
@@ -45,6 +43,10 @@ var module = angular.module("route1", ['ngRoute']);
         $rootScope.labels=data; 
         
         });
+         $http.get('host.php?flag=fetch').success (function(tweetdata){
+              $scope.tweets=tweetdata;
+              
+            });
 
     }]);
 module.filter('unsafe', function($sce) {
