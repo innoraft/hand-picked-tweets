@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
     <script src="jss/jquery.min.js"></script>
 
-    <title>Hand Picked Tweets</title>
+      <title>Hand Picked Tweets From DrupalCon Amsterdam 2014</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="styles/stylesheets/style.css">
